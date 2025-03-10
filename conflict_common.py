@@ -103,6 +103,8 @@ else:
 group1_files = st.file_uploader("Upload Google Scholar PDFs for Group 1", type=["pdf"], accept_multiple_files=True)
 group2_files = st.file_uploader("Upload Google Scholar PDFs for Group 2", type=["pdf"], accept_multiple_files=True)
 
+group1_uploaded_names = [clean_filename(file.name) for file in group1_files] if group1_files else []
+group2_uploaded_names = [clean_filename(file.name) for file in group2_files] if group2_files else []
 # Run simulation button
 run_simulation_button = st.button("Run Simulation")
 
@@ -129,7 +131,8 @@ if run_simulation_button:
     # Ensure we have data from both groups
     if group1_data and group2_data:
         st.subheader("Common Publications Between Researchers from Group 1 and Group 2")
-
+        group1_names = [name for name in group1_uploaded_names if name in group1_data]
+        group2_names = [name for name in group2_uploaded_names if name in group2_data]
         # Create a matrix for comparisons
         comparison_matrix = []
         group1_names = list(group1_data.keys())
