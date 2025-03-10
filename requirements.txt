@@ -1,0 +1,12 @@
+streamlit==1.18.1
+PyMuPDF>=1.21.0
+pandas==2.0.0
+matplotlib==3.7.0
+matplotlib-venn==0.11.6
+venny4py>=1.0.0
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.12.2
+numpy==1.26.4  # Pinned to a compatible version
+setuptools>=69.0.0
+wheel>=0.42.0
+altair<5.0.0
