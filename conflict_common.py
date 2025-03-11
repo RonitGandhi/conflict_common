@@ -59,7 +59,7 @@ def extract_titles_and_years(file_object):
     return titles_and_years
 
 # Function to find similar titles between two sets using fuzzy matching
-def find_similar_titles(set1, set2, threshold=90):
+def find_similar_titles(set1, set2, threshold=95):
     matches = set()
     for title1 in set1:
         for title2 in set2:
@@ -143,7 +143,7 @@ if run_simulation_button:
             titles1 = group1_data[researcher1]
             for researcher2 in group2_names:
                 titles2 = group2_data[researcher2]
-                common_titles = find_similar_titles(titles1, titles2, threshold=90)
+                common_titles = find_similar_titles(titles1, titles2, threshold=95)
                 row.append(len(common_titles))  # Store the number of common publications
             comparison_matrix.append(row)
 
